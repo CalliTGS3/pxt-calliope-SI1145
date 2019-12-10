@@ -77,7 +77,7 @@ namespace SI1145 {
     export function init(): void {
         let id: number = getreg(0x00)
 
-        if (id != 0x45) console.log("SL01 not connected")
+        if (id != 0x45) console.log("SI1145 not connected")
 
         reset()
 
@@ -94,7 +94,6 @@ namespace SI1145 {
         setreg(0x04, 0x01);
 
 
-        /****************************** Prox Sense 1 */
         // program LED current
         setreg(0x0F, 0x03); // 20mA for LED 1 only
         writeParam(0x07, 0x03);
@@ -122,9 +121,6 @@ namespace SI1145 {
         // in high range mode (not normal signal)
         writeParam(0x12, 0x20);
 
-
-        /************************/
-
         // measurement rate for auto
         setreg(0x08, 0xFF); // 255 * 31.25uS = 8ms
 
@@ -134,7 +130,6 @@ namespace SI1145 {
 
     /**
      * Ultra Violet Index
-     * https://en.wikipedia.org/wiki/Ultraviolet_index
     */
     //% block
     export function readUVI(): number {
@@ -143,7 +138,6 @@ namespace SI1145 {
 
     /**
      *  Ambient Light Intensity
-     * https://en.wikipedia.org/wiki/Lux
     */
     //% block
     export function readLight(unit: ILLUMINANCE): number {
