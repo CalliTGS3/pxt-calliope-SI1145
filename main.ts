@@ -20,7 +20,7 @@ enum DISTANCE {
 /**
  * SI1145 block
  */
-//% weight=100 color=#f39c12 icon="\uf8da"
+//% weight=30 color=#0fbc11 icon=""
 namespace SI1145 {
     let SI1145_I2C_ADDR = SI1145_ADDR.ADDR_0x60
 
