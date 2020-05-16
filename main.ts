@@ -22,7 +22,6 @@ enum DISTANCE {
  */
 //% weight=30 color=#0fbc11 icon="\uf0c2"
 namespace SI1145 {
-    let SI1145_I2C_ADDR = 0;
     let SI1145_I2C_ADDR = SI1145_ADDR.ADDR_0x60
 
     function setreg(reg: number, dat: number): void {
