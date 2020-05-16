@@ -147,7 +147,6 @@ namespace SI1145 {
         } else if (unit == ILLUMINANCE.FC) {
             return (getUInt16LE(0x22) / 10764)
         }
-
         return 0
     }
 
