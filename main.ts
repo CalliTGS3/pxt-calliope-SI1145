@@ -54,7 +54,6 @@ namespace SI1145 {
     function writeParam(p: number, v: number) {
         setreg(0x17, v)
         setreg(0x18, p | 0xA0)
-
         return getreg(0x2E);
     }
 
@@ -66,7 +65,6 @@ namespace SI1145 {
         setreg(0x06, 0x00)
         setreg(0x03, 0x00)
         setreg(0x21, 0xFF)
-
         setreg(0x18, 0x01)
         basic.pause(10)
         setreg(0x07, 0x17)
