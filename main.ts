@@ -72,7 +72,7 @@ namespace SI1145 {
         basic.pause(10)
     }
 
-    //% block
+    //% blockId="init" block="Initialisiere Lichtmessung"
     export function init(): void {
         let id: number = getreg(0x00)
 
@@ -130,7 +130,7 @@ namespace SI1145 {
     /**
      * Ultra Violet Index
     */
-    //% block
+    //% blockId="readUVI" block="Ermittle Ultraviolett Wert"
     export function readUVI(): number {
         return (getUInt16LE(0x2C) / 100)
     }
@@ -138,7 +138,7 @@ namespace SI1145 {
     /**
      *  Ambient Light Intensity
     */
-    //% block
+    //% blockId="readLight" block="Ermittle Helligkeitswert in %unit"
     export function readLight(unit: ILLUMINANCE): number {
 
         if (unit == ILLUMINANCE.LUX) {
@@ -152,7 +152,7 @@ namespace SI1145 {
     /**
      *  Infra Red Intensity
     */
-    //% block
+    //% blockId="readIR" block="Ermittle Infrarotwert"
     export function readIR(): number {
         return getUInt16LE(0x24)
     }
@@ -160,7 +160,7 @@ namespace SI1145 {
     /**
      *  Proximity
     */
-    //% block
+    //% blockId="readProximity" block="Ermittle Abstand"
     export function readProximity(unit: DISTANCE): number {
 
         if (unit == DISTANCE.CENTIMETER) {
