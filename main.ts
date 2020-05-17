@@ -20,7 +20,7 @@ enum DISTANCE {
 /**
  * SI1145 block
  */
-//% weight=30 color=#0fbc11 icon="\uf0c2"
+//% weight=30 color=#7d6608 icon="\uf0c2"
 namespace SI1145 {
     let SI1145_I2C_ADDR = SI1145_ADDR.ADDR_0x60
 
@@ -129,7 +129,7 @@ namespace SI1145 {
     /**
      * Ultra Violet Index
     */
-    //% blockId="readUVI" block="Ermittle Ultraviolett Wert"
+    //% blockId="readUVI" block="Ermittle Ultraviolett Index"
     export function readUVI(): number {
         return (getUInt16LE(0x2C) / 100)
     }
@@ -137,7 +137,7 @@ namespace SI1145 {
     /**
      *  Ambient Light Intensity
     */
-    //% blockId="readLight" block="Ermittle Helligkeitswert in %unit"
+    //% blockId="readLight" block="Ermittle Helligkeit Wert in %unit"
     export function readLight(unit: ILLUMINANCE): number {
 
         if (unit == ILLUMINANCE.LUX) {
@@ -151,7 +151,7 @@ namespace SI1145 {
     /**
      *  Infra Red Intensity
     */
-    //% blockId="readIR" block="Ermittle Infrarotwert"
+    //% blockId="readIR" block="Ermittle Infrarot Wert"
     export function readIR(): number {
         return getUInt16LE(0x24)
     }
@@ -159,8 +159,8 @@ namespace SI1145 {
     /**
      *  Proximity
     */
-    //% blockId="readProximity" block="Ermittle Abstand"
-    export function readProximity(unit: DISTANCE): number {
+    // blockId="readProximity" block="Ermittle Abstand in %unit"
+    function readProximity(unit: DISTANCE): number {
 
         if (unit == DISTANCE.CENTIMETER) {
             return getUInt16LE(0x26)
