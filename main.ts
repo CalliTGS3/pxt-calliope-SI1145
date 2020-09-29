@@ -71,8 +71,8 @@ namespace SI1145 {
         basic.pause(10)
     }
 
-    //% blockId="init" block="Initialisiere Lichtmessung"
-    export function init(): void {
+    //% blockId="init_SI1145" block="Initialisiere Lichtmessung"
+    export function init_SI1145(): void {
         let id: number = getreg(0x00)
 
         if (id != 0x45) console.log("SI1145 not connected")
